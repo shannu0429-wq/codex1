@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Farm Assistant - Input</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+            --green-primary: #4CAF50;
+            --green-light: #e8f5e9;
+            --gray-text: #555;
+            --border-color: #ddd;
+            --background-color: #f0f4f7;
+            --success-dot: #28a745;
+            --dark-green-bg: #4c8a5a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--background-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-logo img {
+            height: 40px;
+        }
+
+        .navbar-logo .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .navbar-logo .tagline {
+            font-size: 0.8rem;
+            color: var(--gray-text);
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-menu a:hover,
+        .navbar-menu a.active {
+             background-color: var(--green-primary);
+            color: white;
+        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f7;
+      line-height: 1.6;
+      color: #333;
+    }
+    .form-section-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+    }
+    .form-column {
+      flex: 1;
+      min-width: 300px;
+      background-color: #e8f5e9;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .submit-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .submit-button button {
+      padding: 12px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            
+            <div>
+                <div class="title">🌱Smart Farm Assistant</div>
+                <div class="tagline">Farming Guidance System By Using IOT</div>
+            </div>
+        </div>
+        <div class="navbar-menu">
+            <a href="index.html" >Home</a>
+            <a href="farmdata.html"class="active">Farm Data</a>
+            <a href="results1.html">Results</a>
+            <a href="monitoring.html">Monitoring</a>
+        </div>
+    </div>
+    
+  <div class="main-container">
+    <h1 style="text-align:center;">Tell Us About Your Farm</h1>
+    <form id="farm-data-form">
+      <div class="form-section-container">
+        <div class="form-column">
+          <h3>Soil Information</h3>
+          <div class="form-group">
+            <label for="soil-type">Soil Type</label>
+            <select id="soil-type" required>
+              <option value="">Select soil type</option>
+              <option value="Sandy">Sandy</option>
+              <option value="Loamy">Loamy</option>
+              <option value="Clay">Clay</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ph-level">pH Level</label>
+            <input type="number" step="0.1" id="ph-level" placeholder="e.g. 6.5" required>
+          </div>
+          <div class="form-group">
+            <label for="moisture">Soil Moisture %</label>
+            <input type="number" id="moisture" placeholder="e.g. 45" required>
+          </div>
+          <div class="form-group">
+            <label for="nitrogen">Nitrogen (N)</label>
+            <input type="number" id="nitrogen" placeholder="e.g. 80" required>
+          </div>
+          <div class="form-group">
+            <label for="phosphorus">Phosphorus (P)</label>
+            <input type="number" id="phosphorus" placeholder="e.g. 60" required>
+          </div>
+          <div class="form-group">
+            <label for="potassium">Potassium (K)</label>
+            <input type="number" id="potassium" placeholder="e.g. 40" required>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <h3>Farm Details</h3>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Enter city, state" required>
+          </div>
+          <div class="form-group">
+            <label for="prev-crop">Previous Crop</label>
+            <select id="prev-crop" required>
+              <option value="">Select previous crop</option>
+              <option value="Corn">Corn</option>
+              <option value="Soybeans">Soybeans</option>
+              <option value="rice">Rice</option>
+              <option value="wheat">Wheat</option>
+              <option value="cotton">Cotton</option>
+              <option value="sugarcane">Sugarcane</option>
+              <option value="nopreviouscrop">No previous crop</option>
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="temp">Average Temperature (°C)</label>
+            <input type="number" id="temp" placeholder="e.g. 25" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-button">
+        <button type="submit">Go to Results</button>
+      </div>
+    </form>
+  </div>
+
+<script>
+document.getElementById('farm-data-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Collect form values
+  let data = {
+    soilType: document.getElementById('soil-type').value,
+    ph: parseFloat(document.getElementById('ph-level').value),
+    moisture: parseFloat(document.getElementById('moisture').value),
+    N: parseFloat(document.getElementById('nitrogen').value),
+    P: parseFloat(document.getElementById('phosphorus').value),
+    K: parseFloat(document.getElementById('potassium').value),
+    location: document.getElementById('location').value,
+    prevCrop: document.getElementById('prev-crop').value,
+    temp: parseFloat(document.getElementById('temp').value)
+  };
+
+  // Save to localStorage
+  localStorage.setItem("farmData", JSON.stringify(data));
+
+  // Redirect to results page
+  window.location.href = "results.html";
+});
+</script>
+</body>
+</html>
+
